@@ -1,0 +1,15 @@
+{
+  "paperSources": {
+    "main.tex": "cda28fa980a3a50eee1f40ee439d2a1d5e08b70977647c343374373b211e2ad3",
+    "authors.tex": "e8e6d77c20be032fcea120f50a86abdfbc80bfb6ad0afd0d84c61a4652cebffc",
+    "tables/tab_main.tex": "471f2b7f3e9b20da7fe54b97e6c40430a0284e98055ef2ebca8124f83b065edb",
+    "main.pdf": "22cdf3d6293ccd58c550de429c333c013f08d8fea642f8259e86cff170885fd1",
+    "figures/framework.pdf": "4412d283a7a27980383913a0fa47111a3a9994a3dd5dcd8231084066e665a812",
+    "figures/dataset_pipeline.pdf": "83cea170465260aca7503e676e4bba91fd4f4a40107f596a3a5edee39cc25b02",
+    "figures/response_metrics.pdf": "b31eea5245e73a3473d8121e320bb2f8c6ffdb561ddf0d152cbf6a39b0439e50"
+  },
+  "audio": "Selected SRC recordings; human clips placed at logged runtime offsets, including both N4 turns. Human/model channels separately peak-normalized to 0.85 and encoded as stereo MP3. No timing changes.",
+  "demoSelection": "Four selected systems per scenario. Names are shown only for examples passing the displayed metric; unsuccessful and ineligible examples are anonymized independently per metric. The full results table includes all five evaluated systems.",
+  "waveforms": "360 peak-amplitude bins per original track; display only, not the evaluation speech detector.",
+  "results": "Rates parsed from paper/tables/tab_main.tex; conditional yield denominators from results/ay_revised.json."
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Duplex-MPE evaluates when full-duplex speech assistants should respond, stay silent, and stop speaking in multi-party conversations. Explore the paper, results, and recorded audio examples.">
+  <meta name="theme-color" content="#164e42">
+  <meta property="og:title" content="Duplex-MPE · Multi-party, full-duplex dialogue">
+  <meta property="og:description" content="Knowing the answer is only part of the conversation. A benchmark for responding, staying silent, and yielding the floor.">
+  <meta property="og:type" content="website">
+  <title>Duplex-MPE — Multi-Party Interaction in Full-Duplex Dialogue</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#" aria-label="Duplex-MPE home"><svg viewBox="0 0 32 26" aria-hidden="true"><path d="M3 11v4m6-11v18m7-15v12m7-17v22m6-14v6"/></svg>Duplex-MPE<span class="brand-dot">.</span></a>
+      <nav aria-label="Main navigation"><a href="#examples">Listen</a><a href="#benchmark">Benchmark</a><a href="#results">Results</a><a class="nav-paper" href="assets/Duplex-MPE.pdf">Paper <span aria-hidden="true">↗</span></a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero container" aria-labelledby="page-title">
+      <p class="eyebrow"><span class="tiny-wave" aria-hidden="true">▂▅▃▇▃</span> FULL-DUPLEX SPEECH · MULTI-PARTY INTERACTION</p>
+      <h1 id="page-title">Duplex-MPE<span>.</span></h1>
+      <p class="paper-title">Benchmarking Multi-Party Interaction<br class="desktop-break"> in Full-Duplex Dialogue</p>
+      <p class="hero-summary">Knowing the answer is only part of the conversation.<br>Knowing <em>when to speak, stay silent, and stop</em> matters too.</p>
+      <div id="authors" class="authors" aria-label="Authors"></div>
+      <div id="institutions" class="institutions"></div>
+      <p class="author-notes">* Equal contribution &nbsp; † Corresponding author</p>
+      <div class="hero-links"><a class="button primary" href="assets/Duplex-MPE.pdf"><span aria-hidden="true">↗</span> Read the paper</a><a class="button" href="https://github.com/step-out/MPEval">Code <span aria-hidden="true">↗</span></a><a class="button" href="#dataset">Dataset</a><a class="button text-button" href="#citation">Cite this work <span aria-hidden="true">↓</span></a></div>
+      <div class="stats-strip" aria-label="Benchmark scale">
+        <div><strong>2,000</strong><span>paired scenarios</span></div>
+        <div><strong>3–4 <small>+ 1</small></strong><span>humans + assistant</span></div>
+        <div><strong>~64 <small>h</small></strong><span>constructed audio</span></div>
+        <div><strong>5</strong><span>speech systems evaluated</span></div>
+      </div>
+    </section>
+
+    <section id="examples" class="examples-section" aria-labelledby="examples-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">01 / HEAR THE DIFFERENCE</p><h2 id="examples-title">A conversation has more<br>than one possible next move.</h2></div><p>Listen to recorded model outputs.<br>Switch models on the <strong>same conversation</strong>.</p></div>
+        <div class="example-tabs" role="group" aria-label="Choose a capability example">
+          <button data-example="respond" aria-pressed="false"><span>01</span> Start responding</button>
+          <button data-example="accuracy" aria-pressed="false"><span>02</span> Answer correctly</button>
+          <button data-example="silence" aria-pressed="false"><span>03</span> Stay silent</button>
+          <button data-example="yield" aria-pressed="true"><span>04</span> Stop speaking</button>
+        </div>
+        <article class="demo-card" aria-labelledby="demo-title">
+          <div class="demo-intro"><div><p id="scenario-label" class="mono-label"></p><h3 id="demo-title"></h3><p id="demo-description"></p></div><div class="model-field"><label for="model-select">LISTEN TO</label><select id="model-select" aria-describedby="demo-selection-note"></select><span>Same scene · different model</span></div></div>
+          <div class="demo-body">
+            <div class="listening-panel">
+              <div class="timeline-head"><span>THE SHARED AUDIO TIMELINE</span><span id="duration-label"></span></div>
+              <div class="track-row"><span class="track-label"><i class="dot human-dot"></i>Human</span><div id="human-wave" class="wave-track" aria-hidden="true"></div></div>
+              <div class="track-row"><span class="track-label"><i class="dot model-dot"></i>Model</span><div id="model-wave" class="wave-track" aria-hidden="true"></div></div>
+              <div id="timeline-markers" class="timeline-markers"></div>
+              <div id="seek-buttons" class="seek-buttons" aria-label="Jump to an event"></div>
+              <audio id="demo-audio" controls preload="metadata" aria-label="Synchronized human and model audio"></audio>
+              <p class="audio-help">Headphones recommended. Human speech is on the left; the model is on the right. <a id="audio-download" download>Download clip ↗</a></p>
+              <p id="audio-error" class="audio-error" role="status" hidden>Audio could not load. Try the download link above.</p>
+              <div class="verdict-row"><span id="verdict" class="verdict"></span><p id="verdict-note"></p></div>
+            </div>
+            <div class="transcript-panel"><p class="panel-label">IN THIS EXCERPT</p><div id="human-transcript"></div><div class="model-transcript-block"><p id="model-transcript-label" class="panel-label"></p><p id="model-transcript"></p></div><div id="gold-answer" class="gold-answer" hidden></div></div>
+          </div>
+          <details class="history"><summary>Read the preceding conversation</summary><p class="muted">Earlier turns heard by the model; outside the audio excerpt above.</p><div id="history-transcript"></div></details>
+        </article>
+        <p id="demo-selection-note" class="section-note">Selected examples from four systems. Names are shown only when an example passes the displayed metric; other examples are anonymous. Anonymous labels are local to each metric. Aggregate results below cover all five evaluated systems.</p>
+      </div>
+    </section>
+
+    <section id="benchmark" class="container section" aria-labelledby="benchmark-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / THE BENCHMARK</p><h2 id="benchmark-title">One assistant.<br>Several possible addressees.</h2></div><p>Each scenario places Aria among three or four people. Models hear spoken role instructions followed by continuous conversation audio, without transcripts or supplied turn boundaries.</p></div>
+      <a class="figure-link" href="assets/figures/framework.pdf" aria-label="Open the benchmark framework as a PDF"><img src="assets/figures/framework.webp" width="2200" height="1100" loading="lazy" alt="Duplex-MPE framework: requests to Aria, speech requiring silence, resolved requests, continuous audio input, and separate response metrics."></a>
+      <div class="figure-footer"><span>Duplex-MPE framework</span><a href="assets/figures/framework.pdf">View full-size PDF ↗</a></div>
+      <div class="pairing-note"><span class="pairing-symbol" aria-hidden="true">↔</span><div><h3>Same task. Two ways to address the assistant.</h3><p>Each scenario has an explicit version that names Aria and an implicit version that identifies it through conversational cues. The task and intended answer stay the same. Local wording and audio can differ between the complete paired scenarios.</p></div></div>
+      <div class="metrics-heading"><h3>Four capabilities, measured separately.</h3><p>Speaking often is not the same as participating well.</p></div>
+      <div class="metric-grid">
+        <div><span class="metric-index">01</span><h4>Fresh-onset<br>trigger recall</h4><p>Does the model start a new response within 5 seconds after a request ends, with no speech active at that boundary?</p></div>
+        <div><span class="metric-index">02</span><h4>Conditional<br>answer accuracy</h4><p>When the model produces a response to the request, is its answer correct?</p></div>
+        <div><span class="metric-index">03</span><h4>Silence<br>preservation</h4><p>Does it stay silent when not addressed, allowing only brief acknowledgements that do not take the floor?</p></div>
+        <div><span class="metric-index">04</span><h4>Answering-window<br>yield</h4><p>When it starts after the question and is still speaking as a human resolves it, does it stop by the deadline and remain silent?</p></div>
+      </div>
+      <details class="timing-details"><summary>Explore the response-timing definitions</summary><p>Response presence measures speech on T requests, including speech already underway. Window response measures speech during an N4 question or its following 3-second gap. These are coverage diagnostics that help interpret the capability scores.</p><a href="assets/figures/response_metrics.pdf"><img src="assets/figures/response_metrics.webp" width="2200" height="621" loading="lazy" alt="Four metric timelines showing response presence, fresh response initiation, N4 window response, and stopping eligibility and deadlines."></a><p>For eligible N4 events, the model must be silent two seconds after the human answer begins and remain silent through the rest of that human turn’s observation window, including its following 0.5 seconds. A shorter human turn does not shorten the two-second deadline.</p></details>
+    </section>
+
+    <section id="results" class="results-section section" aria-labelledby="results-title"><div class="container">
+      <div class="section-heading"><div><p class="eyebrow">03 / THE RESULTS</p><h2 id="results-title">Speaking more<br>does not mean doing better.</h2></div><p>Five speech systems show different combinations of missed requests, inaccurate answers, unwanted speech, and difficulty stopping.</p></div>
+      <div class="result-toolbar"><div><h3>Speech-system results</h3><p>Percentages · higher is better for scored capabilities</p></div><div class="side-switch" role="group" aria-label="Result side"><button data-side="src" aria-pressed="true">SRC</button><button data-side="flip" aria-pressed="false">FLIP</button></div></div>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Speech-system result table"><table><caption class="sr-only">Speech system results. The first four metrics score capabilities; the final two show coverage.</caption><thead><tr class="table-groups"><th scope="col"></th><th colspan="4" scope="colgroup">SCORED CAPABILITIES ↑</th><th colspan="2" scope="colgroup">COVERAGE DIAGNOSTICS</th></tr><tr><th scope="col">Model</th><th scope="col">Fresh-onset<br>trigger recall</th><th scope="col">Conditional<br>answer accuracy</th><th scope="col">Silence<br>preservation</th><th scope="col">Answering-window<br>yield</th><th scope="col">Response<br>presence</th><th scope="col">Window<br>response</th></tr></thead><tbody id="results-body"></tbody></table></div>
+      <p id="result-side-note" class="table-note"></p><p class="table-note">Bold marks the highest reportable value for each scored capability. Yield is conditional on each model’s eligible events; sample sizes appear below its values. Freeze-Omni has only one eligible event on each side, so its yield rate is not reported. Answer accuracy is conditional on requests with spoken responses.</p>
+      <div class="findings"><article><span class="finding-number">94.10<small>%</small></span><h3>Fresh responses, not just speech</h3><p>MiniCPM-o 4.5 leads on fresh-onset recall, answer accuracy and silence preservation on SRC and FLIP.</p></article><article><span class="finding-number">99.65<small>%</small></span><h3>High presence can be misleading</h3><p>Freeze-Omni produces speech after almost every request, yet preserves silence on only 0.03% of SRC silence windows.</p></article><article><span class="finding-number">+64.3<small>pp</small></span><h3>Addressing matters in text</h3><p>Gemini 3.1 Pro responds more often to explicit than implicit requests when given transcripts. Paired tests detect no significant difference for the speech systems.</p></article></div>
+    </div></section>
+
+    <section id="dataset" class="container section" aria-labelledby="dataset-title">
+      <div class="section-heading"><div><p class="eyebrow">04 / DATASET CONSTRUCTION</p><h2 id="dataset-title">From conversation scripts<br>to continuous audio.</h2></div><p>Scenarios vary setting, activity, participant relationships, nearby devices, and speaking style. Turn-wise speech synthesis provides the constructed time boundaries.</p></div>
+      <a class="figure-link" href="assets/figures/dataset_pipeline.pdf"><img src="assets/figures/dataset_pipeline.webp" width="2200" height="1048" loading="lazy" alt="Dataset construction pipeline: scene attributes, script generation, paired addressing versions, turn-wise speech synthesis, and continuous audio construction."></a>
+      <div class="figure-footer"><span>Duplex-MPE dataset construction</span><a href="assets/figures/dataset_pipeline.pdf">View full-size PDF ↗</a></div>
+      <div class="dataset-footer"><p>The 2,000 pairs provide 4,000 scenario audio streams. The approximately 64-hour corpus figure counts source scenes plus additional FLIP clips; it does not sum reused audio twice.</p><a class="button" href="https://github.com/step-out/MPEval/blob/main/data/README.md">Dataset documentation ↗</a></div>
+    </section>
+
+    <section id="citation" class="citation-section"><div class="container citation-layout"><div><p class="eyebrow">BUILD ON THIS WORK</p><h2>Cite Duplex-MPE.</h2><p>Questions about the benchmark?<br><a href="mailto:machengqian25@stu.pku.edu.cn">Get in touch ↗</a></p></div><div class="citation-box"><div class="citation-toolbar"><span>BIBTEX</span><button id="copy-citation" type="button">Copy citation</button><span id="copy-status" role="status"></span></div><pre id="bibtex">@misc{ma2026duplexmpe,
+  title = {Duplex-MPE: Benchmarking Multi-Party
+           Interaction in Full-Duplex Dialogue},
+  author = {Ma, Chengqian and Feng, Wenhao and
+            Jin, Weixuan and Dai, Gaole and
+            Xie, Tianyu and Ma, Yuexiao and
+            Kang, Zhaolu and Zhao, Xiangyu and
+            Zheng, Xiawu and Chao, Fei},
+  year = {2026},
+  url = {https://github.com/step-out/MPEval}
+}</pre></div></div></section>
+  </main>
+  <footer class="container footer"><span>Duplex-MPE · 2026</span><span>Multi-party conversations. Selective participation.</span><a href="#">Back to top ↑</a></footer>
+  <noscript><p class="noscript">Enable JavaScript to explore audio examples and the interactive results. The full paper is available above.</p></noscript>
+</body>
+</html>
