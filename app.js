@@ -75,7 +75,7 @@ function renderExample() {
   audio.src = clip.audio;
   audio.load();
   $("#audio-download").href = clip.audio;
-  $("#scenario-label").textContent = `${example.side} · SCENARIO ${example.scenario.split("_").at(-1)} · TURN ${example.turn}`;
+  $("#scenario-label").textContent = `SCENARIO ${example.scenario.split("_").at(-1)} · TURN ${example.turn}`;
   $("#demo-title").textContent = example.title;
   $("#demo-description").textContent = example.description;
   $("#duration-label").textContent = `${clip.duration.toFixed(1)} s`;
@@ -129,8 +129,8 @@ function updateTime() {
   });
 }
 
-function renderResults(side) {
-  const rows = data.results.filter(row => row.side === side);
+function renderResults(condition) {
+  const rows = data.results.filter(row => row.condition === condition);
   const best = [0, 1, 2, 3].map(i => Math.max(...rows.map(row => row.values[i] === null ? -1 : row.values[i])));
   const body = $("#results-body");
   body.replaceChildren();
@@ -149,11 +149,11 @@ function renderResults(side) {
     }
     body.append(tr);
   }
-  $("#result-side-note").textContent = side === "src"
-    ? "SRC: the 2,000 original scenarios. Each contains an explicit or implicit request; FLIP reverses its addressing form. SRC is not an explicit-only subset."
-    : "FLIP: the 2,000 paired counterparts, with each request’s addressing form reversed. Both SRC and FLIP contain explicit and implicit requests.";
-  document.querySelectorAll("[data-side]").forEach(button => {
-    button.setAttribute("aria-pressed", String(button.dataset.side === side));
+  $("#result-condition-note").textContent = condition === "explicit"
+    ? "Explicit: 2,000 scenarios in which the T request names Aria. Silence and N4 scores cover the other events in these same scenarios."
+    : "Implicit: the corresponding 2,000 scenarios in which the T request identifies the assistant through conversational cues. Silence and N4 scores cover the other events in these same scenarios.";
+  document.querySelectorAll("[data-condition]").forEach(button => {
+    button.setAttribute("aria-pressed", String(button.dataset.condition === condition));
   });
 }
 
@@ -165,8 +165,8 @@ document.querySelectorAll("[data-example]").forEach(button => {
   });
 });
 $("#model-select").addEventListener("change", event => { modelId = event.target.value; renderExample(); });
-document.querySelectorAll("[data-side]").forEach(button => {
-  button.addEventListener("click", () => renderResults(button.dataset.side));
+document.querySelectorAll("[data-condition]").forEach(button => {
+  button.addEventListener("click", () => renderResults(button.dataset.condition));
 });
 audio.addEventListener("timeupdate", updateTime);
 audio.addEventListener("error", () => { $("#audio-error").hidden = false; });
@@ -186,4 +186,4 @@ $("#copy-citation").addEventListener("click", async () => {
 });
 renderAuthors();
 renderExample();
-renderResults("src");
+renderResults("explicit");

@@ -43,13 +43,15 @@ class HomepageTests(unittest.TestCase):
     def tearDown(self):
         self.page.close()
 
-    def test_paper_results_switch_side_without_converting_missing_to_zero(self):
+    def test_results_use_actual_addressing_conditions_without_converting_missing_to_zero(self):
         self.assertTrue(self.page.locator("#results-body").count(), "Homepage results are missing")
         row = self.page.locator('#results-body tr[data-model="minicpm"]')
-        self.assertIn("94.10", row.inner_text())
-        self.page.get_by_role("button", name="FLIP", exact=True).click()
-        self.assertIn("95.25", row.inner_text())
-        self.assertIn("47.44", row.inner_text())
+        self.assertIn("95.00", row.inner_text())
+        self.assertIn("47.30", row.inner_text())
+        self.page.get_by_role("button", name="Implicit", exact=True).click()
+        self.assertIn("94.35", row.inner_text())
+        self.assertIn("46.65", row.inner_text())
+        self.assertNotRegex(self.page.locator('body').inner_text(), r'\b(?:SRC|FLIP)\b')
         self.assertIn("n/a", self.page.locator('#results-body tr[data-model="freezeomni"]').inner_text())
 
     def test_model_switch_keeps_scenario_and_resets_playback(self):

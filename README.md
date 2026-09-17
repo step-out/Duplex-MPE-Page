@@ -7,7 +7,7 @@ Full-Duplex Dialogue**.
 [Paper PDF](assets/Duplex-MPE.pdf)
 
 The page includes the paper and author list, three benchmark figures, recorded audio
-examples with synchronized waveforms and transcripts, SRC/FLIP results, and BibTeX.
+examples with synchronized waveforms and transcripts, explicit/implicit results, and BibTeX.
 It is a static HTML/CSS/JavaScript site; no build step, API key or backend is required.
 
 ## Deploy on GitHub Pages
@@ -84,7 +84,7 @@ python scripts/test_site.py
 ```
 
 They verify all 16 audio clips, model switching and playback reset, timeline seeking,
-metric-dependent name display, missing-audio recovery, result-side switching, clipboard
+metric-dependent name display, missing-audio recovery, addressing-condition switching, clipboard
 copying, mobile layout and local asset availability.
 
 The website code uses the repository's [MIT license](LICENSE).
