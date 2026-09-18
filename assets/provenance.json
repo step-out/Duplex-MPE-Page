@@ -1,15 +1,15 @@
 {
   "paperSources": {
-    "main.tex": "5f7fbe516f0c6aa4c9343e1d6cc9276779f72e2e628a1415043176baef3656bd",
+    "main.tex": "f717a84831732da065ffa26ee395240bd30e15913c434392225ec89761476f49",
     "authors.tex": "e8e6d77c20be032fcea120f50a86abdfbc80bfb6ad0afd0d84c61a4652cebffc",
-    "tables/tab_main.tex": "297d32aaf62226bc9ad69410f2120bc4836c83fd6c0baefcc256d080f6fee738",
+    "tables/tab_main.tex": "a3641614b5194e712b5b1ad3477837ca8967bec9a1259ad31d609e33d1cc5015",
     "figures/framework.pdf": "4412d283a7a27980383913a0fa47111a3a9994a3dd5dcd8231084066e665a812",
-    "figures/dataset_pipeline.pdf": "83cea170465260aca7503e676e4bba91fd4f4a40107f596a3a5edee39cc25b02",
+    "figures/dataset_pipeline.pdf": "12c127461e67a0111ae18cdd4f40f2e802cf793128061bcabb23e6721142b498",
     "figures/response_metrics.pdf": "b31eea5245e73a3473d8121e320bb2f8c6ffdb561ddf0d152cbf6a39b0439e50"
   },
   "audio": "Selected recordings; human clips placed at logged runtime offsets, including both N4 turns. Human/model channels separately peak-normalized to 0.85 and encoded as stereo MP3. No timing changes.",
   "demoSelection": "Four selected systems per scenario. Names are shown only for examples passing the displayed metric; unsuccessful and ineligible examples are anonymized independently per metric. The full results table includes all five evaluated systems.",
   "waveforms": "360 peak-amplitude bins per original track; display only, not the evaluation speech detector.",
   "results": "Counts regrouped by each scenario's T addressing condition; shared with the manuscript table renderer.",
-  "aggregateSha256": "a27063209e560fd3397ef8dabc1eda242b46ed918ce4bcaf84c29153701f6ba7"
+  "aggregateSha256": "12e3f5f3e46530ffefb29fce66ad3110779fedd32bda6429e63e73540b25e568"
 }
