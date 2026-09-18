@@ -3,10 +3,9 @@
 Project homepage for **Duplex-MPE: Benchmarking Multi-Party Interaction in
 Full-Duplex Dialogue**.
 
-[Benchmark repository](https://github.com/step-out/MPEval) ·
-[Paper PDF](assets/Duplex-MPE.pdf)
+[Benchmark repository](https://github.com/step-out/MPEval)
 
-The page includes the paper and author list, three benchmark figures, recorded audio
+The page includes the project title and author list, three benchmark figures, recorded audio
 examples with synchronized waveforms and transcripts, explicit/implicit results, and BibTeX.
 It is a static HTML/CSS/JavaScript site; no build step, API key or backend is required.
 
@@ -44,7 +43,6 @@ for seeking in audio. It binds only to localhost by default.
 | `data.js` | Authors, result values, transcripts and demo metadata |
 | `assets/audio/` | 16 selected stereo MP3 excerpts |
 | `assets/figures/` | Original figure PDFs and web images |
-| `assets/Duplex-MPE.pdf` | Preprint available from the paper button |
 | `assets/provenance.json` | Source hashes and export conventions |
 | `scripts/` | Local preview and browser verification |
 
@@ -65,10 +63,10 @@ Recording identity mappings are not included in this repository.
 
 - Edit prose, links and the BibTeX block in `index.html`.
 - Update author and result data in `data.js` from the current manuscript and validated results.
-- Replace the bundled PDF or figure assets when the paper changes.
+- Replace figure assets when the paper changes.
 - Keep anonymous example IDs and file names free of model identities.
-- Once arXiv assigns an identifier, add the real arXiv URL and identifier to the paper
-  links and citation. Until then, the paper button serves the bundled PDF.
+- The manuscript PDF and paper download buttons are currently withheld.
+  Restore a paper link only after the authors request publication.
 
 The **Code** button links to the benchmark repository, not this website repository.
 The **Dataset** section links to the benchmark's data documentation.
