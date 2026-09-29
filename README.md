@@ -3,8 +3,6 @@
 Project homepage for **Duplex-MPE: Benchmarking Multi-Party Interaction in
 Full-Duplex Dialogue**.
 
-[Benchmark repository](https://github.com/step-out/MPEval)
-
 The page includes the project title and author list, three benchmark figures, recorded audio
 examples with synchronized waveforms and transcripts, explicit/implicit results, and BibTeX.
 It is a static HTML/CSS/JavaScript site; no build step, API key or backend is required.
@@ -68,8 +66,8 @@ Recording identity mappings are not included in this repository.
 - The manuscript PDF and paper download buttons are currently withheld.
   Restore a paper link only after the authors request publication.
 
-The **Code** button links to the benchmark repository, not this website repository.
-The **Dataset** section links to the benchmark's data documentation.
+Code and dataset-repository links are withheld until the correct repository URL is provided.
+The BibTeX URL points to the project homepage.
 
 ## Verification
 
