@@ -65,8 +65,7 @@ Recording identity mappings are not included in this repository.
   figures change (requires PyMuPDF and Pillow). This updates all three PDFs,
   web previews, image dimensions, cache versions and figure provenance together.
 - Keep anonymous example IDs and file names free of model identities.
-- The manuscript PDF and paper download buttons are currently withheld.
-  Restore a paper link only after the authors request publication.
+- The **Paper** button links to the [arXiv PDF](https://arxiv.org/pdf/2609.31948).
 
 Code and dataset-repository links are withheld until the correct repository URL is provided.
 The BibTeX URL points to the project homepage.
