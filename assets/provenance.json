@@ -3,13 +3,36 @@
     "main.tex": "f717a84831732da065ffa26ee395240bd30e15913c434392225ec89761476f49",
     "authors.tex": "e8e6d77c20be032fcea120f50a86abdfbc80bfb6ad0afd0d84c61a4652cebffc",
     "tables/tab_main.tex": "a3641614b5194e712b5b1ad3477837ca8967bec9a1259ad31d609e33d1cc5015",
-    "figures/framework.pdf": "4412d283a7a27980383913a0fa47111a3a9994a3dd5dcd8231084066e665a812",
-    "figures/dataset_pipeline.pdf": "12c127461e67a0111ae18cdd4f40f2e802cf793128061bcabb23e6721142b498",
-    "figures/response_metrics.pdf": "b31eea5245e73a3473d8121e320bb2f8c6ffdb561ddf0d152cbf6a39b0439e50"
+    "figures/framework.pdf": "e932ca2e9658c3fc2ef051f742ce146bd5fb334cba80348e5d5c828f0cbde3cb",
+    "figures/dataset_pipeline.pdf": "9cfb0578583bf3740f83c9a15e96cd957bc5cb792d03c5ee0b2995efef4e9762",
+    "figures/response_metrics.pdf": "0e41affb2f86543a01c42baae9089639125129b9579463bdc450339423e8caae"
   },
   "audio": "Selected recordings; human clips placed at logged runtime offsets, including both N4 turns. Human/model channels separately peak-normalized to 0.85 and encoded as stereo MP3. No timing changes.",
   "demoSelection": "Four selected systems per scenario. Names are shown only for examples passing the displayed metric; unsuccessful and ineligible examples are anonymized independently per metric. The full results table includes all five evaluated systems.",
   "waveforms": "360 peak-amplitude bins per original track; display only, not the evaluation speech detector.",
   "results": "Counts regrouped by each scenario's T addressing condition; shared with the manuscript table renderer.",
-  "aggregateSha256": "12e3f5f3e46530ffefb29fce66ad3110779fedd32bda6429e63e73540b25e568"
+  "aggregateSha256": "12e3f5f3e46530ffefb29fce66ad3110779fedd32bda6429e63e73540b25e568",
+  "figurePreviews": {
+    "framework": {
+      "pdfSha256": "e932ca2e9658c3fc2ef051f742ce146bd5fb334cba80348e5d5c828f0cbde3cb",
+      "webpSha256": "307495b9ec126e566ca648c5c5e702c0058a9323157094a9a1fe056ce5137ccc",
+      "width": 2200,
+      "height": 1100,
+      "pdfPage": 1
+    },
+    "dataset_pipeline": {
+      "pdfSha256": "9cfb0578583bf3740f83c9a15e96cd957bc5cb792d03c5ee0b2995efef4e9762",
+      "webpSha256": "78227340143e45a7b8ad6ddc3a5574b58aa8bd1d9938d4bce4c84a418887aa3a",
+      "width": 2200,
+      "height": 1048,
+      "pdfPage": 1
+    },
+    "response_metrics": {
+      "pdfSha256": "0e41affb2f86543a01c42baae9089639125129b9579463bdc450339423e8caae",
+      "webpSha256": "c9661790cd36d4099200432b1652d267e86d90366de727c711be65d7db7738b5",
+      "width": 2200,
+      "height": 734,
+      "pdfPage": 1
+    }
+  }
 }

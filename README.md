@@ -61,7 +61,9 @@ Recording identity mappings are not included in this repository.
 
 - Edit prose, links and the BibTeX block in `index.html`.
 - Update author and result data in `data.js` from the current manuscript and validated results.
-- Replace figure assets when the paper changes.
+- Run `python scripts/sync_figures.py --paper-dir ../paper_iclr` when manuscript
+  figures change (requires PyMuPDF and Pillow). This updates all three PDFs,
+  web previews, image dimensions, cache versions and figure provenance together.
 - Keep anonymous example IDs and file names free of model identities.
 - The manuscript PDF and paper download buttons are currently withheld.
   Restore a paper link only after the authors request publication.
