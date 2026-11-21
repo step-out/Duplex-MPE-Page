@@ -39,6 +39,10 @@
         <a class="button" href="https://www.modelscope.ai/datasets/ChengqianMa/Duplex-MPE">Dataset (ModelScope) <span aria-hidden="true">↗</span></a>
         <a class="button text-button" href="#citation">Cite this work <span aria-hidden="true">↓</span></a>
       </div>
+      <div class="hero-announcement" role="note" aria-label="Open-source benchmark integration">
+        <span class="announcement-pill">NEW</span>
+        <span class="announcement-text">Officially integrated into <strong>SGLang-Omni</strong> for live <code>/v1/realtime</code> evaluation — <a href="#sglang-omni">explore docs &amp; code ↓</a></span>
+      </div>
       <div class="stats-strip" aria-label="Benchmark scale">
         <div><strong>2,000</strong><span>paired scenarios</span></div>
         <div><strong>3–4 <small>+ 1</small></strong><span>humans + assistant</span></div>
@@ -109,6 +113,19 @@
         <p>Each of the 2,000 pairs contributes one explicit and one implicit scenario, giving 4,000 audio streams. The dataset contains 61.10 hours of distinct human-speech clips. The constructed conversations total 110.93 hours including reused clips and inter-turn gaps.</p>
         <a class="button" href="https://huggingface.co/datasets/ChengqianMa/Duplex-MPE">Hugging Face <span aria-hidden="true">↗</span></a>
         <a class="button" href="https://www.modelscope.ai/datasets/ChengqianMa/Duplex-MPE">ModelScope <span aria-hidden="true">↗</span></a>
+      </div>
+      <div id="sglang-omni" class="integration-banner" aria-labelledby="sglang-omni-title">
+        <div class="integration-copy">
+          <p class="eyebrow">OPEN-SOURCE RUNTIME INTEGRATION · SGLANG-OMNI</p>
+          <h3 id="sglang-omni-title">Evaluate live <code>/v1/realtime</code> servers out of the box.</h3>
+          <p>Beyond the standalone Python package, Duplex-MPE is natively merged into <strong>SGLang-Omni</strong> for closed-loop evaluation of streaming voice endpoints across native full-duplex models (<code>MiniCPM-o 4.5</code>, <code>PersonaPlex</code>, <code>Nemotron VoiceChat</code>) and turn-based probes (<code>Qwen3-Omni</code>, <code>Streaming Cascade</code>).</p>
+        </div>
+        <div class="integration-links">
+          <a class="button primary" href="https://sgl-project.github.io/sglang-omni/developer_reference/full_duplex_guide.html#multi-party-benchmark-duplex-mpe">Online Guide <span aria-hidden="true">↗</span></a>
+          <a class="button" href="https://github.com/sgl-project/sglang-omni/blob/main/benchmarks/README.md#duplex-mpe-multi-party-full-duplex-evaluation">Benchmark README <span aria-hidden="true">↗</span></a>
+          <a class="button" href="https://github.com/sgl-project/sglang-omni/tree/main/benchmarks/duplex/mpe">Source Code <span aria-hidden="true">↗</span></a>
+          <a class="button" href="https://github.com/sgl-project/sglang-omni/pull/4157">PR #4157 <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </section>
 
