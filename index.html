@@ -27,7 +27,7 @@
       <p class="eyebrow"><span class="tiny-wave" aria-hidden="true">▂▅▃▇▃</span> FULL-DUPLEX SPEECH · MULTI-PARTY INTERACTION</p>
       <h1 id="page-title">Duplex-MPE<span>.</span></h1>
       <p class="paper-title">Benchmarking Multi-Party Interaction<br class="desktop-break"> in Full-Duplex Dialogue</p>
-      <p class="hero-summary">Knowing the answer is only part of the conversation.<br>Knowing <em>when to speak, stay silent, and stop</em> matters too.</p>
+      <p class="hero-summary">Knowing the answer is only part of the conversation.<br> Knowing <em>when to speak, stay silent, and stop</em> matters too.</p>
       <div id="authors" class="authors" aria-label="Authors"></div>
       <div id="institutions" class="institutions"></div>
       <p class="author-notes">* Equal contribution &nbsp; † Corresponding author</p>
@@ -41,7 +41,7 @@
       </div>
       <div class="hero-announcement" role="note" aria-label="Open-source benchmark integration">
         <span class="announcement-pill">NEW</span>
-        <span class="announcement-text">Officially integrated into <strong>SGLang-Omni</strong> (<a href="https://github.com/sgl-project/sglang-omni/pull/4157">PR #4157</a>, <a href="https://github.com/sgl-project/sglang-omni/pull/4516">PR #4516</a>) for live <code>/v1/realtime</code> evaluation — <a href="#sglang-omni">explore docs &amp; code ↓</a></span>
+        <span class="announcement-text">Officially integrated into <strong>SGLang-Omni</strong> (<a href="https://github.com/sgl-project/sglang-omni/pull/4157">PR #4157</a>, <a href="https://github.com/sgl-project/sglang-omni/pull/4516">PR #4516</a>) &amp; <strong>vLLM-Omni</strong> (<a href="https://github.com/vllm-project/vllm-omni/pull/11156">PR #11156</a>) for live <code>/v1/realtime</code> evaluation — <a href="#sglang-omni">SGLang-Omni ↓</a> · <a href="#vllm-omni">vLLM-Omni ↓</a></span>
       </div>
       <div class="stats-strip" aria-label="Benchmark scale">
         <div><strong>2,000</strong><span>paired scenarios</span></div>
@@ -114,11 +114,11 @@
         <a class="button" href="https://huggingface.co/datasets/ChengqianMa/Duplex-MPE">Hugging Face <span aria-hidden="true">↗</span></a>
         <a class="button" href="https://www.modelscope.ai/datasets/ChengqianMa/Duplex-MPE">ModelScope <span aria-hidden="true">↗</span></a>
       </div>
-      <div id="sglang-omni" class="integration-banner" aria-labelledby="sglang-omni-title">
+      <div id="sglang-omni" class="integration-banner" role="region" aria-labelledby="sglang-omni-title">
         <div class="integration-copy">
           <p class="eyebrow">OPEN-SOURCE RUNTIME INTEGRATION · SGLANG-OMNI</p>
           <h3 id="sglang-omni-title">Evaluate live <code>/v1/realtime</code> servers out of the box.</h3>
-          <p>Beyond the standalone Python package, Duplex-MPE is natively merged into <strong>SGLang-Omni</strong> for closed-loop evaluation of streaming voice endpoints across native full-duplex models (<code>MiniCPM-o 4.5</code>, <code>PersonaPlex</code>, <code>Nemotron VoiceChat</code>) and turn-based probes (<code>Qwen3-Omni</code>, <code>Streaming Cascade</code>): <a href="https://github.com/sgl-project/sglang-omni/pull/4157">PR #4157</a> ships the dataset loader, reactive scheduler, causal VAD, and semantic scoring CLI, and <a href="https://github.com/sgl-project/sglang-omni/pull/4516">PR #4516</a> adds <code>conversation.item.truncate</code> playback synchronization and partial-ASR / echo checks.</p>
+          <p>Beyond the standalone Python package, Duplex-MPE is natively merged into <strong>SGLang-Omni</strong> for closed-loop evaluation of streaming voice endpoints across native full-duplex models (<code>MiniCPM-o 4.5</code>, <code>PersonaPlex</code>, <code>Nemotron VoiceChat</code>) and unscored turn-based probes (<code>Qwen3-Omni</code>, <code>Streaming Cascade</code>): <a href="https://github.com/sgl-project/sglang-omni/pull/4157">PR #4157</a> ships the dataset loader, reactive scheduler, causal VAD, and semantic scoring CLI, and <a href="https://github.com/sgl-project/sglang-omni/pull/4516">PR #4516</a> adds <code>conversation.item.truncate</code> playback synchronization and partial-ASR / echo checks.</p>
         </div>
         <div class="integration-links">
           <a class="button primary" href="https://sgl-project.github.io/sglang-omni/developer_reference/full_duplex_guide.html#multi-party-benchmark-duplex-mpe">Online Guide <span aria-hidden="true">↗</span></a>
@@ -127,6 +127,19 @@
           <a class="button" href="https://huggingface.co/datasets/ChengqianMa/Duplex-MPE-sglang-omni-eval">Eval Artifacts <span aria-hidden="true">↗</span></a>
           <a class="button" href="https://github.com/sgl-project/sglang-omni/pull/4157">PR #4157 <span aria-hidden="true">↗</span></a>
           <a class="button" href="https://github.com/sgl-project/sglang-omni/pull/4516">PR #4516 <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div id="vllm-omni" class="integration-banner" role="region" aria-labelledby="vllm-omni-title">
+        <div class="integration-copy">
+          <p class="eyebrow">OPEN-SOURCE RUNTIME INTEGRATION · VLLM-OMNI</p>
+          <h3 id="vllm-omni-title">Evaluate live <code>/v1/realtime?duplex=1</code> endpoints on vLLM-Omni.</h3>
+          <p>Duplex-MPE is also natively merged into <strong>vLLM-Omni</strong> (<a href="https://github.com/vllm-project/vllm-omni/pull/11156">PR #11156</a>) for audio-clocked closed-loop evaluation of streaming speech servers across native full-duplex models (<code>MiniCPM-o 4.5</code>, <code>PersonaPlex</code>, <code>Nemotron VoiceChat</code>) and unscored turn-based probes (<code>Qwen3-Omni</code>), with <code>playback.ack</code> / <code>conversation.item.truncate</code> synchronization, causal Silero VAD 6.2.1, and separated generation/scoring provenance.</p>
+        </div>
+        <div class="integration-links">
+          <a class="button primary" href="https://docs.vllm.ai/projects/vllm-omni/en/latest/serving/realtime_duplex_api/">Online Docs <span aria-hidden="true">↗</span></a>
+          <a class="button" href="https://github.com/vllm-project/vllm-omni/blob/main/benchmarks/duplex_mpe/README.md">Benchmark README <span aria-hidden="true">↗</span></a>
+          <a class="button" href="https://github.com/vllm-project/vllm-omni/tree/main/benchmarks/duplex_mpe">Source Code <span aria-hidden="true">↗</span></a>
+          <a class="button" href="https://github.com/vllm-project/vllm-omni/pull/11156">PR #11156 <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
